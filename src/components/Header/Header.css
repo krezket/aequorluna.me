@@ -1,0 +1,15 @@
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    width: 100vw;
+}
+
+.link-header {
+    padding-left: 2rem;
+}
+.links-header {
+    padding-right: 2rem;
+}
