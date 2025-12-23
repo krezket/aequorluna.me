@@ -7,6 +7,13 @@
     width: 100vw;
 }
 
+.link-main {
+    color: initial;
+}
+.link-main:hover {
+    color: white;
+}
+
 .link-header {
     padding-left: 2rem;
 }

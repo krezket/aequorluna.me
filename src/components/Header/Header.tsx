@@ -6,14 +6,13 @@ export default function Header() {
     return (
         <>
             <header className='main-header'>
-                <h1>Aequor Luna</h1>
+                <Link to="/" className="link-main"> <h1>Aequor Luna</h1> </Link>
+
                 <div className="links-header">
-                    <Link to='/' className="link-header">blog</Link>
-                    <Link to='/' className="link-header">about</Link>
+                    <Link to='/blog' className="link-header">blog</Link>
+                    <Link to='/art' className="link-header">art</Link>
                 </div>
             </header>
         </>
     )
 };
-
-
