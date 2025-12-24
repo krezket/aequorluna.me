@@ -137,7 +137,7 @@ const API = {
             // console.log(res)
             return res.json()
         } else {
-            throw new Error("falied signup")
+            throw new Error("failed signup")
         }
     },
 

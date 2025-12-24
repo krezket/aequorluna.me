@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom"
+import Modal from '../LogOutModal';
 import './Header.css' 
 
 export default function Header(props) {
     console.log("header props:", props)
     const navigate = useNavigate()
     const [modal, setModal] = useState(false)
+
+    const toggleModal = () => {
+        setModal(!modal)
+    };
 
     const logout = () => {
         setModal(!modal)
@@ -25,29 +30,30 @@ export default function Header(props) {
     return (
         <>
             {!ID ?
-            <header className='main-header'>
-                <Link to="/" className="link-main"> 
-                    <h1>Aequor Luna</h1> 
-                </Link>
+                <header className='main-header'>
+                    <Link to="/" className="link-main"> 
+                        <h1>Aequor Luna</h1> 
+                    </Link>
 
-                <div className="links-header">
-                    <Link to='/blog' className="link-header">blog</Link>
-                    <Link to='/art' className="link-header">art</Link>
-                </div>
-            </header>
+                    <div className="links-header">
+                        <Link to='/blog' className="link-header">blog</Link>
+                        <Link to='/art' className="link-header">art</Link>
+                    </div>
+                </header>
 
-            :
-            <header className='main-header'>
-                <Link to="/" className="link-main"> 
-                    <h1>Aequor Luna</h1> 
-                </Link>
+                :
+                <header className='main-header'>
+                    <Link to="/" className="link-main"> 
+                        <h1>Aequor Luna</h1> 
+                    </Link>
 
-                <div className="links-header">
-                    <Link to='/blog' className="link-header">blog</Link>
-                    <Link to='/art' className="link-header">art</Link>
-                    <Link to='/' className="link-header">log out</Link>
-                </div>
-            </header>
+                    <div className="links-header">
+                        <Link to='/blog' className="link-header">blog</Link>
+                        <Link to='/art' className="link-header">art</Link>
+                        <Link onClick={toggleModal} className="link-header">log out</Link>
+                    </div>
+                    <Modal modal={modal} logout={logout} toggleModal={toggleModal} />
+                </header>
             }
         </>
     )
