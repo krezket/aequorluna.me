@@ -4,7 +4,7 @@ import Modal from '../LogOutModal';
 import './Header.css' 
 
 export default function Header(props) {
-    console.log("header props:", props)
+    // console.log("header props:", props)
     const navigate = useNavigate()
     const [modal, setModal] = useState(false)
 
@@ -14,13 +14,8 @@ export default function Header(props) {
 
     const logout = () => {
         setModal(!modal)
-        props.setUserId(0);
-        props.setUsername("");
-        props.setToken("");
-        props.setEmail("");
         window.sessionStorage.removeItem("token");
         window.sessionStorage.removeItem("userId");
-        window.sessionStorage.removeItem("UserData");
         navigate("/");
         window.location.reload(false);
     };
@@ -48,8 +43,8 @@ export default function Header(props) {
                     </Link>
 
                     <div className="links-header">
-                        <Link to='/blog' className="link-header">blog</Link>
-                        <Link to='/art' className="link-header">art</Link>
+                        <Link to='/blog' className="link-header">edit blog</Link>
+                        <Link to='/art' className="link-header">post art</Link>
                         <Link onClick={toggleModal} className="link-header">log out</Link>
                     </div>
                     <Modal modal={modal} logout={logout} toggleModal={toggleModal} />

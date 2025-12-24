@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import API from '../../utils/API';
 import './Sami-Only.css'
 
-function Sami(props) {
+export default function Sami(props) {
     // console.log("Log In:", props)
 
     const navigate = useNavigate();
@@ -57,5 +57,3 @@ function Sami(props) {
         </>
     );
 };
-
-export default Sami 
