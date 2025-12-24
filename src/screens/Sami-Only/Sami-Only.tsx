@@ -32,7 +32,7 @@ function Sami(props) {
                 props.setFullName(data.user.fullName)
                 props.setUsername(data.user.username)
                 props.setToken(data.token)
-                // window.sessionStorage.setItem("token", data.token)
+                window.sessionStorage.setItem("token", data.token)
                 window.sessionStorage.setItem("userId", data.user.id);
                 navigate("/")
                 // window.location.reload(false);

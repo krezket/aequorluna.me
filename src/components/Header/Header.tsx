@@ -20,10 +20,11 @@ export default function Header(props) {
         window.location.reload(false);
     };
 
-    const ID = window.sessionStorage.getItem("token");
+    const ID = window.sessionStorage.getItem("userId");
 
     return (
         <>
+            {!ID ?
             <header className='main-header'>
                 <Link to="/" className="link-main"> 
                     <h1>Aequor Luna</h1> 
@@ -34,6 +35,20 @@ export default function Header(props) {
                     <Link to='/art' className="link-header">art</Link>
                 </div>
             </header>
+
+            :
+            <header className='main-header'>
+                <Link to="/" className="link-main"> 
+                    <h1>Aequor Luna</h1> 
+                </Link>
+
+                <div className="links-header">
+                    <Link to='/blog' className="link-header">blog</Link>
+                    <Link to='/art' className="link-header">art</Link>
+                    <Link to='/' className="link-header">log out</Link>
+                </div>
+            </header>
+            }
         </>
     )
 };
