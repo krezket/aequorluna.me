@@ -13,7 +13,11 @@ import './Blog.css'
 // 1. Move Theme and Error Handler outside the component
 const theme = {
     paragraph: 'editor-paragraph',
-    // Add more class mapping here
+    text: {
+        bold: 'editor-text-bold',
+        italic: 'editor-text-italic',
+        underline: 'editor-text-underline', // This is the missing link
+    },   // Add more class mapping here
 };
 
 function onError(error) {

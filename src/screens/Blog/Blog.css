@@ -23,3 +23,48 @@
     width: 90vh;
     margin: 20px;
 }
+.editor-text-underline {
+  text-decoration: underline;
+}
+
+/* Ensure your other styles are present too */
+.editor-text-bold {
+  font-weight: bold;
+}
+
+.editor-text-italic {
+  font-style: italic;
+}
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background: #fcfcfc;
+}
+
+.toolbar-item {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toolbar-item:hover {
+    background: #eee;
+}
+
+.toolbar-divider {
+    color: #ccc;
+    margin: 0 5px;
+}
+
+.font-size-display {
+    font-family: monospace;
+    font-size: 12px;
+    min-width: 35px;
+    text-align: center;
+}
